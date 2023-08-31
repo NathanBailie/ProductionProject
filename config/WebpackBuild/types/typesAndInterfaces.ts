@@ -4,6 +4,7 @@ export interface Paths {
     input: string,
     output: string,
     html: string
+    src: string
 }
 
 export interface Envs {
