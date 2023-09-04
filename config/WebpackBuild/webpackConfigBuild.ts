@@ -19,7 +19,7 @@ export function webpackConfigBuild(options: Options): webpack.Configuration {
             path: output,
             clean: true,
         },
-        plugins: createPlugins(html),
+        plugins: createPlugins(html, isDev),
         module: {
             rules: createLoaders(isDev),
         },
