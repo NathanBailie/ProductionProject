@@ -3,16 +3,15 @@ import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface LangSwitcherProps {
-    className?: string,
-};
+    className?: string
+}
 
-export const LangSwitcher = ({ className
-}: LangSwitcherProps) => {
+export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const langToggler = () => {
         i18n.changeLanguage(
-            i18n.language === 'ru' ? 'en' : 'ru'
+            i18n.language === 'ru' ? 'en' : 'ru',
         );
     };
 
@@ -21,7 +20,8 @@ export const LangSwitcher = ({ className
             className={classNames(
                 '',
                 {},
-                [className])}
+                [className],
+            )}
             onClick={langToggler}
             theme={ButtonTheme.CLEAR}
         >

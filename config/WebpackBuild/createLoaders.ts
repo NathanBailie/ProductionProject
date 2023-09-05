@@ -1,14 +1,14 @@
-import { RuleSetRule } from 'webpack';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { type RuleSetRule } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export function createLoaders(isDev: boolean): RuleSetRule[] {
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env']
+                presets: ['@babel/preset-env'],
             },
         },
     };
@@ -33,7 +33,7 @@ export function createLoaders(isDev: boolean): RuleSetRule[] {
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     modules: {
                         auto: (resourcePath: string) => Boolean(resourcePath.includes('.module')),
@@ -41,7 +41,7 @@ export function createLoaders(isDev: boolean): RuleSetRule[] {
                     },
                 },
             },
-            "sass-loader",
+            'sass-loader',
         ],
     };
 
@@ -56,6 +56,6 @@ export function createLoaders(isDev: boolean): RuleSetRule[] {
         svgLoader,
         babelLoader,
         typeScriptLoader,
-        sassLoader
+        sassLoader,
     ];
 }

@@ -1,20 +1,20 @@
-export type Mode = 'development' | 'production';
+export type Mode = 'development' | 'production'
 
 export interface Paths {
-    input: string,
-    output: string,
-    html: string
-    src: string
+  input: string
+  output: string
+  html: string
+  src: string
 }
 
 export interface Envs {
-    port: number,
-    mode: Mode,
+  port: number
+  mode: Mode
 }
 
 export interface Options {
-    mode: Mode,
-    paths: Paths,
-    isDev: boolean,
-    port: number
+  mode: Mode
+  paths: Paths
+  isDev: boolean
+  port: number
 }

@@ -1,16 +1,18 @@
-import webpack from 'webpack';
+import type webpack from 'webpack';
 import { createPlugins } from './createPlugins';
 import { createLoaders } from './createLoaders';
 import { createResolvers } from './createResolvers';
-import { Options } from './types/typesAndInterfaces';
+import { type Options } from './types/typesAndInterfaces';
 import { createDevServer } from './createDevServer';
 
 export function webpackConfigBuild(options: Options): webpack.Configuration {
     const { mode, paths, isDev } = options;
-    const { input, output, html, src } = paths;
+    const {
+        input, output, html, src,
+    } = paths;
 
     return {
-        mode: mode,
+        mode,
         entry: {
             bundle: input,
         },
@@ -26,5 +28,5 @@ export function webpackConfigBuild(options: Options): webpack.Configuration {
         resolve: createResolvers(src),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? createDevServer(options) : undefined,
-    }
+    };
 }

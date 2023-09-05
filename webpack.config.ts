@@ -1,7 +1,7 @@
 import path from 'path';
-import webpack from 'webpack';
+import type webpack from 'webpack';
 import { webpackConfigBuild } from './config/WebpackBuild/webpackConfigBuild';
-import { Envs } from './config/WebpackBuild/types/typesAndInterfaces';
+import { type Envs } from './config/WebpackBuild/types/typesAndInterfaces';
 
 export default (env: Envs) => {
     const paths = {

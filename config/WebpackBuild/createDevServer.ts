@@ -1,5 +1,5 @@
-import { Options } from './types/typesAndInterfaces';
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import { type Options } from './types/typesAndInterfaces';
 
 export function createDevServer(options: Options): DevServerConfiguration {
     return {
