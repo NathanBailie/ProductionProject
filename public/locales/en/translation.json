@@ -1,3 +1,10 @@
 {
-    "Language": "English"
+    "Language": "English",
+    "Error": "Something went wrong",
+    "Throw error": "Throw error",
+    "Reload page": "Reload page",
+    "Main": "Main",
+    "About": "About",
+    "Toggle": "Toggle",
+    "Loading": "Loading"
 }
