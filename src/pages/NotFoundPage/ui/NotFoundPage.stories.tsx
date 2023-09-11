@@ -1,23 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { NotFoundPage } from './NotFoundPage';
 
-const meta: Meta<typeof NotFoundPage> = {
+export default {
     title: 'pages/NotFoundPage',
     component: NotFoundPage,
-    tags: ['autodocs'],
-    decorators: [ThemeDecorator(Theme.LIGHT)],
-};
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof NotFoundPage>;
 
-export default meta;
-type Story = StoryObj<typeof NotFoundPage>;
+const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
 
-export const Primary: Story = {
-    args: {},
-};
+export const Light = Template.bind({});
+Light.args = {};
 
-export const PrimaryDark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
-    args: {},
-};
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

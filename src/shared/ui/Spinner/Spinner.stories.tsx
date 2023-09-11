@@ -1,23 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Spinner } from './Spinner';
 
-const meta: Meta<typeof Spinner> = {
-    title: 'shared/Spinner',
+export default {
+    title: 'shared/Loader',
     component: Spinner,
-    tags: ['autodocs'],
-    decorators: [ThemeDecorator(Theme.LIGHT)],
-};
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+    args: {
+        to: '/',
+    },
+} as ComponentMeta<typeof Spinner>;
 
-export default meta;
-type Story = StoryObj<typeof Spinner>;
+const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />;
 
-export const Primary: Story = {
-    args: {},
-};
+export const Light = Template.bind({});
+Light.args = {};
 
-export const PrimaryDark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
-    args: {},
-};
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

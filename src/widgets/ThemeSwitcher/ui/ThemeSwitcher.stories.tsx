@@ -1,23 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
-const meta: Meta<typeof ThemeSwitcher> = {
+export default {
     title: 'shared/ThemeSwitcher',
     component: ThemeSwitcher,
-    tags: ['autodocs'],
-    decorators: [ThemeDecorator(Theme.LIGHT)],
-};
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ThemeSwitcher>;
 
-export default meta;
-type Story = StoryObj<typeof ThemeSwitcher>;
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
 
-export const Primary: Story = {
-    args: {},
-};
+export const Light = Template.bind({});
+Light.args = {};
 
-export const PrimaryDark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
-    args: {},
-};
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
