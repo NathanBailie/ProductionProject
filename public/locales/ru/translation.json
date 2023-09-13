@@ -1,9 +1,9 @@
 {
-    "Language": "Русский",
     "Error": "Что-то пошло не так",
     "Throw error": "Вызвать ошибку",
     "Reload page": "Перезагрузить страницу",
     "Main": "Главная",
     "About": "О сайте",
-    "Toggle": "Сдвинуть"
+    "Language": "Русский",
+    "Short language": "Ru"
 }
