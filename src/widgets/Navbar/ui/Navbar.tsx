@@ -12,7 +12,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links} />
+            <div className={cls.links}>/</div>
         </div>
     );
 };
