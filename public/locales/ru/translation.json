@@ -6,5 +6,7 @@
     "About": "О сайте",
     "Language": "Русский",
     "Short language": "Ru",
-    "Sign in": "Войти"
+    "Sign in": "Войти",
+    "Increment": "Инкремент",
+    "Decrement": "Декремент"
 }
