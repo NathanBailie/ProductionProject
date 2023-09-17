@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --env port=3000",
+    "start:dev:server": "node ./json-server/index.js",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
@@ -19,7 +20,8 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook",
+    "json:run": "json-server --watch ./json-server/db.json"
   },
   "keywords": [],
   "author": "",
@@ -65,6 +67,7 @@
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
+    "json-server": "^0.17.3",
     "loki": "^0.32.0",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.14.0",
