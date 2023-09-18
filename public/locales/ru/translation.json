@@ -8,5 +8,7 @@
     "Short language": "Ru",
     "Sign in": "Войти",
     "Increment": "Инкремент",
-    "Decrement": "Декремент"
+    "Decrement": "Декремент",
+    "Username": "Логин",
+    "Password": "Пароль"
 }

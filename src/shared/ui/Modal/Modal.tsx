@@ -2,6 +2,7 @@ import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -10,6 +11,7 @@ interface ModalProps {
     isOpen?: boolean,
     onClose?: () => void,
     children?: ReactNode,
+    lazy?: boolean
 }
 
 export const Modal = ({
@@ -17,8 +19,11 @@ export const Modal = ({
     children,
     isOpen,
     onClose,
+    lazy,
 }: ModalProps) => {
+    const { theme } = useTheme();
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const ANIM_DELAY = 300;
     const onContentClick = (e: MouseEvent) => {
@@ -43,6 +48,12 @@ export const Modal = ({
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
 
@@ -56,10 +67,14 @@ export const Modal = ({
         [cls.isClosing]: isClosing,
     };
 
+    if (lazy && !isMounted) {
+        return null;
+    }
+
     return (
         <Portal>
             <div className={classNames(
-                cls.Modal,
+                `${cls.Modal} ${theme}`,
                 mods,
                 [className],
             )}
