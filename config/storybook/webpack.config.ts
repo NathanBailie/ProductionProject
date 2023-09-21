@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
 import { Paths } from '../WebpackBuild/types/typesAndInterfaces';
 import { createSassLoader } from '../WebpackBuild/loaders/sassLoader';
@@ -30,6 +30,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
         use: ['@svgr/webpack'],
     });
     config.module!.rules!.push(createSassLoader(true));
+    config.plugins!.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
     return config;
 };

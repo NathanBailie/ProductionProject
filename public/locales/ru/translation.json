@@ -6,9 +6,12 @@
     "About": "О сайте",
     "Language": "Русский",
     "Short language": "Ru",
-    "Sign in": "Войти",
     "Increment": "Инкремент",
     "Decrement": "Декремент",
     "Username": "Логин",
-    "Password": "Пароль"
+    "Password": "Пароль",
+    "Authorization form": "Форма авторизации",
+    "Wrong login or password": "Неверный логин или парль",
+    "Log in": "Войти",
+    "Log out": "Выйти"
 }
