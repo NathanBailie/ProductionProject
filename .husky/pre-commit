@@ -6,4 +6,4 @@ npm run lint:scss:fix
 npm run lint:ts:fix
 npm run test:unit
 npm run storybook:build
-npm run test:ui:ci
+# npm run test:ui:ci

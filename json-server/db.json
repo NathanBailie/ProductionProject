@@ -1,12 +1,12 @@
 {
     "posts": [
         {
-            "id": 1,
+            "id": "1",
             "title": "json-server1",
             "author": "typicode1"
         },
         {
-            "id": 2,
+            "id": "2",
             "title": "json-server2",
             "author": "typicode2"
         },
@@ -18,14 +18,14 @@
     ],
     "comments": [
         {
-            "id": 1,
+            "id": "1",
             "body": "some comment",
             "postId": 1
         }
     ],
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "username": "admin",
             "password": "123"
         }
