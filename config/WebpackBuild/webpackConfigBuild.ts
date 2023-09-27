@@ -6,7 +6,12 @@ import { type Options } from './types/typesAndInterfaces';
 import { createDevServer } from './createDevServer';
 
 export function webpackConfigBuild(options: Options): webpack.Configuration {
-    const { mode, paths, isDev } = options;
+    const {
+        mode,
+        paths,
+        isDev,
+        apiUrl,
+    } = options;
     const {
         input, output, html, src,
     } = paths;
@@ -21,7 +26,7 @@ export function webpackConfigBuild(options: Options): webpack.Configuration {
             path: output,
             clean: true,
         },
-        plugins: createPlugins(html, isDev),
+        plugins: createPlugins(html, isDev, apiUrl),
         module: {
             rules: createLoaders(isDev),
         },
