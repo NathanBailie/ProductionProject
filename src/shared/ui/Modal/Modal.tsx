@@ -1,7 +1,7 @@
 import {
-    ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
+    ReactNode, MouseEvent, useState, useRef, useEffect, useCallback, MutableRefObject,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -24,7 +24,7 @@ export const Modal = ({
     const { theme } = useTheme();
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const ANIM_DELAY = 300;
     const onContentClick = (e: MouseEvent) => {
         e.stopPropagation();
@@ -62,7 +62,7 @@ export const Modal = ({
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
