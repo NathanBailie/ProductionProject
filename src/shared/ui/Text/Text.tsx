@@ -5,7 +5,12 @@ import cls from './Text.module.scss';
 export enum TextTheme {
     NORMAL = 'normal',
     ERROR = 'error'
+}
 
+export enum TextAligns {
+    LEFT = 'left',
+    CENTER = 'center',
+    RIGHT = 'right',
 }
 
 interface TextProps {
@@ -13,6 +18,7 @@ interface TextProps {
     title?: string,
     text?: string,
     theme?: TextTheme,
+    align?: TextAligns,
 }
 
 export const Text = memo((props: TextProps) => {
@@ -21,13 +27,14 @@ export const Text = memo((props: TextProps) => {
         title,
         text,
         theme = TextTheme.NORMAL,
+        align = TextAligns.LEFT,
     } = props;
 
     return (
         <div className={classNames(
             cls.Text,
             {},
-            [className, cls[theme]],
+            [className, cls[theme], cls[align]],
         )}
         >
             {title && <p className={cls.title}>{title}</p>}

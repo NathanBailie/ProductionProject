@@ -18,7 +18,7 @@ export interface StateSchema {
 
     // async reducers
     loginForm?: LoginSchema,
-    profile?: ProfileSchema
+    profile?: ProfileSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -40,6 +40,7 @@ export interface ThunkExtraArg {
 }
 
 export interface ThunkConfig<T> {
-    rejectValue: T;
-    extra: ThunkExtraArg;
+    rejectValue: T,
+    extra: ThunkExtraArg,
+    state: StateSchema,
 }

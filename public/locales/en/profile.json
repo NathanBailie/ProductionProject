@@ -1,6 +1,16 @@
 {
     "Profile": "Profile",
     "Redact": "Redact",
-    "Your name": "Your name",
-    "Your lastname": "Your lastname"
+    "Save": "Save",
+    "Cancel": "Cancel",
+    "Profile error": "Profile error",
+    "Reload your page": "Try to reload your page",
+    "Name": "Name",
+    "Lastname": "Lastname",
+    "Age": "Age",
+    "Currency": "Currency",
+    "Country": "Country",
+    "City": "City",
+    "Username": "Username",
+    "Avatar link": "Avatar link"
 }

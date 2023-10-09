@@ -1,6 +1,16 @@
 {
     "Profile": "Профиль",
     "Redact": "Редактироать",
-    "Your name": "Ваше имя",
-    "Your lastname": "Ваша фамилия"
+    "Save": "Сохранить",
+    "Cancel": "Отменить",
+    "Profile error": "Ошибка профиля",
+    "Reload your page": "Попробуйте обновить страницу",
+    "Name": "Имя",
+    "Lastname": "Фамилия",
+    "Age": "Возраст",
+    "Currency": "Валюта",
+    "Country": "Страна",
+    "City": "Город",
+    "Username": "Имя пользователя",
+    "Avatar link": "Ссылка на аватар"
 }

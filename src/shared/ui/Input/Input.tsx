@@ -8,13 +8,14 @@ import React, {
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 
 interface InputProps extends HTMLInputProps {
     className?: string,
-    value?: string,
+    value?: string | number,
     onChange?: (value: string) => void,
     autofocus?: boolean,
+    readonly?: boolean,
 }
 
 export const Input = memo(
@@ -26,11 +27,13 @@ export const Input = memo(
             type = 'text',
             placeholder,
             autofocus,
+            readonly,
             ...otherProps
         } = props;
         const [isFocused, setIsFocused] = useState(false);
         const [carriagePosition, setCarriagePosition] = useState(0);
         const ref = useRef<HTMLInputElement>(null);
+        const isCarriageVisible = isFocused && !readonly;
 
         useEffect(() => {
             if (autofocus) {
@@ -75,9 +78,10 @@ export const Input = memo(
                         onFocus={onFocus}
                         onBlur={onBlur}
                         onSelect={onSelect}
+                        readOnly={readonly}
                         {...otherProps}
                     />
-                    {isFocused && (
+                    {isCarriageVisible && (
                         <span
                             style={{ left: `${carriagePosition * 8.8}px` }}
                             className={cls.carriage}
