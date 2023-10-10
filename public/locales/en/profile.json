@@ -12,5 +12,10 @@
     "Country": "Country",
     "City": "City",
     "Username": "Username",
-    "Avatar link": "Avatar link"
+    "Avatar link": "Avatar link",
+    "Incorrect user data": "Incorrect user data",
+    "Incorrect age": "Incorrect age",
+    "Incorrect country": "Incorrect country",
+    "No data": "No data",
+    "Server error": "Server error"
 }

@@ -12,5 +12,10 @@
     "Country": "Страна",
     "City": "Город",
     "Username": "Имя пользователя",
-    "Avatar link": "Ссылка на аватар"
+    "Avatar link": "Ссылка на аватар",
+    "Incorrect user data": "Некорректные данные пользователя",
+    "Incorrect age": "Некорректный возраст",
+    "Incorrect country": "Некорректные данные страны",
+    "No data": "Нет данных",
+    "Server error": "Серверная ошибка"
 }
