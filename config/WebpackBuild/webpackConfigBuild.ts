@@ -11,6 +11,7 @@ export function webpackConfigBuild(options: Options): webpack.Configuration {
         paths,
         isDev,
         apiUrl,
+        project,
     } = options;
     const {
         input, output, html, src,
@@ -26,7 +27,7 @@ export function webpackConfigBuild(options: Options): webpack.Configuration {
             path: output,
             clean: true,
         },
-        plugins: createPlugins(html, isDev, apiUrl),
+        plugins: createPlugins(html, isDev, apiUrl, project),
         module: {
             rules: createLoaders(isDev),
         },

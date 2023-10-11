@@ -33,7 +33,7 @@ export const profileSlice = createSlice({
         builder
             .addCase(fetchProfileData.pending, (state) => {
                 state.isLoading = true;
-                state.validateErrors = undefined;
+                state.isError = undefined;
             })
             .addCase(fetchProfileData.fulfilled, (
                 state,
@@ -49,7 +49,7 @@ export const profileSlice = createSlice({
             })
             .addCase(updateProfileData.pending, (state) => {
                 state.isLoading = true;
-                state.isError = undefined;
+                state.validateErrors = undefined;
             })
             .addCase(updateProfileData.fulfilled, (
                 state,
