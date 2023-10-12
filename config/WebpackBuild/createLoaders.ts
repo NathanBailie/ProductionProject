@@ -1,18 +1,9 @@
 import { type RuleSetRule } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { createSassLoader } from './loaders/sassLoader';
+import { createBabelLoader } from './loaders/babelLoader';
 
 export function createLoaders(isDev: boolean): RuleSetRule[] {
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-            },
-        },
-    };
+    const babelLoader = createBabelLoader(isDev);
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
