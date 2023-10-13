@@ -6,7 +6,9 @@ export interface CounterState {
     value: number
 }
 
-const initialState: UserSchema = {};
+const initialState: UserSchema = {
+    _initialized: false,
+};
 
 export const userSlice = createSlice({
     name: 'user',
@@ -20,6 +22,7 @@ export const userSlice = createSlice({
             if (user) {
                 state.authData = JSON.parse(user);
             }
+            state._initialized = true;
         },
         logout: (state) => {
             state.authData = undefined;

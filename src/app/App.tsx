@@ -3,13 +3,14 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Sidebar } from 'widgets/Sidebar';
 import { Navbar } from 'widgets/Navbar';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInitialized, userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {
     const { theme } = useTheme();
     const dispatch = useDispatch();
+    const initialized = useSelector(getUserInitialized);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -21,7 +22,7 @@ const App = () => {
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    {initialized && <AppRouter />}
                 </div>
             </Suspense>
         </div>

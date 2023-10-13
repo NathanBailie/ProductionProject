@@ -1,39 +1,32 @@
-import { getUserAuthData } from 'entities/User';
-import { AboutPage } from 'pages/AboutPage';
-import { MainPage } from 'pages/MainPage';
-import { Suspense, memo, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
+import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
+import { PageLoader } from 'widgets/PageLoader';
+import { RequireAuth } from './RequierAuth';
 
 const AppRouter = () => {
-    const isAuth = useSelector(getUserAuthData);
-
-    const routes = useMemo(() => Object.values(routeConfig).filter((route) => {
-        if (route.authOnly && !isAuth) {
-            return false;
-        }
-
-        return true;
-    }), [isAuth]);
+    const renderWithWrapper = useCallback((route: AppRoutesProps) => {
+        const { path, element, authOnly } = route;
+        const item = (
+            <Suspense fallback={<PageLoader />}>
+                <div className="page-wrapper">
+                    {element}
+                </div>
+            </Suspense>
+        );
+        return (
+            <Route
+                key={path}
+                path={path}
+                element={authOnly ? <RequireAuth>{item}</RequireAuth> : item}
+            />
+        );
+    }, []);
 
     return (
-        <Suspense fallback={<PageLoader />}>
-            <Routes>
-                {routes.map(({ path, element }) => (
-                    <Route
-                        key={path}
-                        element={(
-                            <div className="page-wrapper">
-                                {element}
-                            </div>
-                        )}
-                        path={path}
-                    />
-                ))}
-            </Routes>
-        </Suspense>
+        <Routes>
+            {Object.values(routeConfig).map(renderWithWrapper)}
+        </Routes>
     );
 };
 
