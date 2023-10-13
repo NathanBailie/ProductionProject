@@ -4,6 +4,8 @@
     "Reload page": "Reload page",
     "Main": "Main",
     "About": "About",
+    "Artickles": "Artickles",
+    "Profile": "Profile",
     "Language": "English",
     "Short language": "En",
     "Increment": "Increment",
@@ -13,6 +15,5 @@
     "Authorization form": "Authorization form",
     "Wrong login or password": "Wrong login or password",
     "Log in": "Log in",
-    "Log out": "Log out",
-    "Profile": "Profile"
+    "Log out": "Log out"
 }

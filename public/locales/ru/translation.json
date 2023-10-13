@@ -4,6 +4,8 @@
     "Reload page": "Перезагрузить страницу",
     "Main": "Главная",
     "About": "О сайте",
+    "Artickles": "Статьи",
+    "Profile": "Профиль",
     "Language": "Русский",
     "Short language": "Ru",
     "Increment": "Инкремент",
@@ -13,6 +15,5 @@
     "Authorization form": "Форма авторизации",
     "Wrong login or password": "Неверный логин или парль",
     "Log in": "Войти",
-    "Log out": "Выйти",
-    "Profile": "Профиль"
+    "Log out": "Выйти"
 }
