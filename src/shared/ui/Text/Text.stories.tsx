@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -13,10 +13,24 @@ export default {
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Primary = Template.bind({});
+Primary.args = {
     title: 'title',
     text: 'text',
+};
+
+export const PrimarySizeM = Template.bind({});
+PrimarySizeM.args = {
+    title: 'title',
+    text: 'text',
+    size: TextSize.M,
+};
+
+export const PrimarySizeL = Template.bind({});
+PrimarySizeL.args = {
+    title: 'title',
+    text: 'text',
+    size: TextSize.L,
 };
 
 export const Error = Template.bind({});

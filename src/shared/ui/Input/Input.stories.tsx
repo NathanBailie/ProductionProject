@@ -13,8 +13,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Liht = Template.bind({});
-Liht.args = {
+export const Light = Template.bind({});
+Light.args = {
     placeholder: 'Type some text',
     value: 'Some text',
 };
