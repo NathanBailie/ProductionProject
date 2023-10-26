@@ -1,6 +1,6 @@
 import { AboutPage } from 'pages/AboutPage';
 import { ArticlesPage } from 'pages/ArticklesPage';
-import { ArticklesDetailsPage } from 'pages/ArticklesDetailsPage';
+import { ArticlesDetailsPage } from 'pages/ArticklesDetailsPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
@@ -48,7 +48,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ARTICLES_DETAILS]: {
         path: `${RoutePaths.article_details}:id`,
-        element: <ArticklesDetailsPage />,
+        element: <ArticlesDetailsPage />,
         authOnly: true,
     },
     [AppRoutes.NOT_FOUND]: {

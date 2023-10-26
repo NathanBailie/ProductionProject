@@ -1,3 +1,5 @@
 export {
-    ArticklesDetailsPageAsync as ArticklesDetailsPage,
-} from './ui/ArticklesDetailsPage/ArticklesDetailsPage.async';
+    ArticlesDetailsPageAsync as ArticlesDetailsPage,
+} from './ui/ArticklesDetailsPage/ArticlesDetailsPage.async';
+
+export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';

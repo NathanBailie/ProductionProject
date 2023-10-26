@@ -3,17 +3,17 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticklesDetailsPage from './ArticklesDetailsPage';
+import ArticlesDetailsPage from './ArticlesDetailsPage';
 
 export default {
-    title: 'pages/ArticklesDetailsPage',
-    component: ArticklesDetailsPage,
+    title: 'pages/ArticlesDetailsPage',
+    component: ArticlesDetailsPage,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticklesDetailsPage>;
+} as ComponentMeta<typeof ArticlesDetailsPage>;
 
-const Template: ComponentStory<typeof ArticklesDetailsPage> = () => <ArticklesDetailsPage />;
+const Template: ComponentStory<typeof ArticlesDetailsPage> = () => <ArticlesDetailsPage />;
 
 const article: Article = {
     id: '1',
