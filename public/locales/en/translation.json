@@ -16,5 +16,7 @@
     "Wrong login or password": "Wrong login or password",
     "Log in": "Log in",
     "Log out": "Log out",
-    "No comment": "No comment"
+    "No comment": "No comment",
+    "Type comment text": "Type comment text",
+    "Send": "Send"
 }

@@ -12,6 +12,7 @@ const data = {
     country: Country.TURKEY,
     city: 'Mersin',
     username: 'admin',
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {
