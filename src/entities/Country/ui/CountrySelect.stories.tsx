@@ -14,12 +14,8 @@ export default {
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
 export const CountrySelectLight = Template.bind({});
-CountrySelectLight.args = {
-
-};
+CountrySelectLight.args = {};
 
 export const CountrySelectDark = Template.bind({});
-CountrySelectDark.args = {
-
-};
+CountrySelectDark.args = {};
 CountrySelectDark.decorators = [ThemeDecorator(Theme.DARK)];

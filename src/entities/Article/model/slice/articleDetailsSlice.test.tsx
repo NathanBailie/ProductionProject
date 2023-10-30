@@ -10,6 +10,10 @@ const data: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 999,
     createdAt: '16.10.2023',
+    user: {
+        id: '1',
+        username: 'Nathan',
+    },
     type: [ArticleType.IT],
     blocks: [
         {
