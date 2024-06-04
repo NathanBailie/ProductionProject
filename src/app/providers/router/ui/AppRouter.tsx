@@ -9,9 +9,7 @@ const AppRouter = () => {
         const { path, element, authOnly } = route;
         const item = (
             <Suspense fallback={<PageLoader />}>
-                <div className="page-wrapper">
-                    {element}
-                </div>
+                {element}
             </Suspense>
         );
         return (
