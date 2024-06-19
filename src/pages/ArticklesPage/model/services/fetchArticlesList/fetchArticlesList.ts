@@ -3,13 +3,13 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article';
 import { getArticlesPageLimit } from '../../selectors/articlesPageSelectors';
 
-export interface FtchArticlesListProps {
+export interface FetchArticlesListProps {
     page?: number,
 }
 
 export const fetchArticlesList = createAsyncThunk<
     Article[],
-    FtchArticlesListProps,
+    FetchArticlesListProps,
     ThunkConfig<string>
 >(
     'articlePage/fetchArticlesList',
