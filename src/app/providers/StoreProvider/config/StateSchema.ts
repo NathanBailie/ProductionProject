@@ -10,6 +10,7 @@ import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ScrollRecoverySchema } from 'features/ScrollRecovery';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticklesDetailsPage';
 import { articlesPageSchema } from 'pages/ArticklesPage';
@@ -18,6 +19,7 @@ import { CombinedState } from 'redux';
 export interface StateSchema {
     counter: CounterSchema,
     user: UserSchema,
+    scrollRecovery: ScrollRecoverySchema,
 
     // async reducers
     loginForm?: LoginSchema,
