@@ -12,7 +12,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ScrollRecoverySchema } from 'features/ScrollRecovery';
 import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticklesDetailsPage';
+import { ArticleDetailsPageSchema } from 'pages/ArticklesDetailsPage';
 import { articlesPageSchema } from 'pages/ArticklesPage';
 import { CombinedState } from 'redux';
 
@@ -25,9 +25,9 @@ export interface StateSchema {
     loginForm?: LoginSchema,
     profile?: ProfileSchema,
     articleDetails?: ArticleDetailsSchema,
-    articleDetailsComments?: ArticleDetailsCommentsSchema,
     addCommentForm?: AddCommentFormSchema,
     articlesPage?: articlesPageSchema,
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
