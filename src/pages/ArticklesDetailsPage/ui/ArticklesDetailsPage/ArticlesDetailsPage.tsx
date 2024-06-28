@@ -2,15 +2,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleDetails, ArticleList } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addCommentForm';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import {
     getArticleRecommendationsIsLoading,
@@ -27,6 +25,7 @@ import {
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import cls from './ArticlesDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticlesDetailsPageProps {
     className?: string,
@@ -44,11 +43,6 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const dispatch = useDispatch();
-
-    const navigate = useNavigate();
-    const onBackToList = useCallback(() => {
-        navigate(RoutePaths.articles);
-    }, [navigate]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -70,9 +64,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
-                <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
-                    {t('Back to list')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}
