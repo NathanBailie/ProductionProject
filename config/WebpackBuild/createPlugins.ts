@@ -3,17 +3,18 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CopyPlugin from 'copy-webpack-plugin';
+import { Options } from './types/typesAndInterfaces';
 
 export function createPlugins(
-    html: string,
-    isDev: boolean,
-    apiUrl: string,
-    project: string,
+    {
+        paths, isDev, apiUrl, project,
+    }: Options,
 ): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: html,
+            template: paths.html,
         }),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
@@ -26,6 +27,11 @@ export function createPlugins(
             __PROJECT__: JSON.stringify(project),
         }),
 
+        new CopyPlugin({
+            patterns: [
+                { from: paths.locales, to: paths.buildLocales },
+            ],
+        }),
     ];
 
     if (isDev) {
