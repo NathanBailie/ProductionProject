@@ -12,7 +12,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page/Page';
 import {
     getArticleRecommendationsIsLoading,
-} from 'pages/ArticklesDetailsPage/model/selectors/recommendations';
+} from '../../model/selectors/recommendations';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
