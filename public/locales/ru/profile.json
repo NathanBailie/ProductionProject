@@ -17,5 +17,6 @@
     "Incorrect age": "Некорректный возраст",
     "Incorrect country": "Некорректные данные страны",
     "No data": "Нет данных",
-    "Server error": "Серверная ошибка"
+    "Server error": "Серверная ошибка",
+    "Choose currency": "Выберите валюту"
 }
