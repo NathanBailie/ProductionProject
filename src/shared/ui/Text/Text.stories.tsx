@@ -19,6 +19,13 @@ Primary.args = {
     text: 'text',
 };
 
+export const PrimarySizeS = Template.bind({});
+PrimarySizeS.args = {
+    title: 'title',
+    text: 'text',
+    size: TextSize.S,
+};
+
 export const PrimarySizeM = Template.bind({});
 PrimarySizeM.args = {
     title: 'title',
@@ -49,6 +56,30 @@ export const OnlyWithText = Template.bind({});
 OnlyWithText.args = {
     text: 'text',
 };
+
+export const PrimaryDarkSizeS = Template.bind({});
+PrimaryDarkSizeS.args = {
+    title: 'title',
+    text: 'text',
+    size: TextSize.S,
+};
+PrimaryDarkSizeS.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryDarkSizeM = Template.bind({});
+PrimaryDarkSizeM.args = {
+    title: 'title',
+    text: 'text',
+    size: TextSize.M,
+};
+PrimaryDarkSizeM.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryDarkSizeL = Template.bind({});
+PrimaryDarkSizeL.args = {
+    title: 'title',
+    text: 'text',
+    size: TextSize.L,
+};
+PrimaryDarkSizeL.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
