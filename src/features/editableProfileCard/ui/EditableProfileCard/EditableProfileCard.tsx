@@ -18,7 +18,6 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { ValidateProfileErrors } from '../../model/types/editableProfileCardSchema';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import cls from './EditableProfileCard.module.scss';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
@@ -91,7 +90,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 max
                 gap="8"
                 className={
-                    classNames(cls.EditableProfileCard, {}, [className])
+                    classNames('', {}, [className])
                 }
             >
                 <EditableProfileCardHeader />
