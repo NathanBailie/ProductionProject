@@ -18,5 +18,6 @@
     "Incorrect country": "Некорректные данные страны",
     "No data": "Нет данных",
     "Server error": "Серверная ошибка",
-    "Choose currency": "Выберите валюту"
+    "Choose currency": "Выберите валюту",
+    "Profile was not found": "Профиль не найден"
 }

@@ -1,10 +1,9 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import avatar from 'shared/assets/tests/Avatar/avatar.jpg';
-import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import ProfilePage from './ProfilePage';
 
 export default {
@@ -15,43 +14,36 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
-    StoreDecorator({
-        profile: {
-            form: {
-                first: 'Nathan',
-                lastname: 'Bailie',
-                age: 31,
-                currency: Currency.TRY,
-                country: Country.TURKEY,
-                city: 'Mersin',
-                username: 'admin',
-                avatar,
-            },
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            username: 'admin',
+            age: 32,
+            country: Country.RUSSIA,
+            lastname: 'aaa',
+            first: 'bbb',
+            city: 'ccc',
+            currency: Currency.RUB,
         },
-    }),
-];
+    },
+})];
 
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        profile: {
-            form: {
-                first: 'Nathan',
-                lastname: 'Bailie',
-                age: 31,
-                currency: Currency.TRY,
-                country: Country.TURKEY,
-                city: 'Mersin',
-                username: 'admin',
-                avatar,
-            },
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    profile: {
+        form: {
+            username: 'admin',
+            age: 32,
+            country: Country.RUSSIA,
+            lastname: 'aaa',
+            first: 'bbb',
+            city: 'ccc',
+            currency: Currency.RUB,
         },
-    }),
-];
+    },
+})];
