@@ -11,10 +11,9 @@ import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
     Article,
-    ArticleBlockType,
     ArticleTextBlock,
-    ArticleView,
 } from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 
