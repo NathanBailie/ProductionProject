@@ -1,4 +1,6 @@
-import { useState, useMemo, type FC, ReactNode } from 'react';
+import {
+    useState, useMemo, type FC, ReactNode,
+} from 'react';
 import { Theme, ThemeContext } from '../lib/ThemeContext';
 
 const defaultTheme = localStorage.getItem('theme') as Theme || Theme.LIGHT;
