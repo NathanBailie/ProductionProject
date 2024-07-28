@@ -12,6 +12,8 @@ import { HStack } from 'shared/Stack';
 import { NotificationButton } from 'features/notificationButton';
 import { AvatarDropdown } from 'features/avatarDropdown';
 import cls from './Navbar.module.scss';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { NotificationList } from 'entities/Notification';
 
 interface NavbarProps {
     className?: string
@@ -45,6 +47,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('Create a new article')}
                 </AppLink>
                 <HStack gap='16' className={cls.actions}>
+
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>

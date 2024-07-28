@@ -5,6 +5,7 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
+import { Overlay } from '../Overlay/Overlay';
 
 interface ModalProps {
     className?: string,
@@ -26,9 +27,6 @@ export const Modal = ({
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const ANIM_DELAY = 300;
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -79,10 +77,9 @@ export const Modal = ({
                 [className],
             )}
             >
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={(e) => onContentClick(e)}>
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
