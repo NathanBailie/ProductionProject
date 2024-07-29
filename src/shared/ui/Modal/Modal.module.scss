@@ -21,6 +21,7 @@
     background: var(--bg-color);
     transform: scale(0.5);
     transition: 0.3s transform;
+    z-index: var(--modal-z-index);
 }
 
 .opened {

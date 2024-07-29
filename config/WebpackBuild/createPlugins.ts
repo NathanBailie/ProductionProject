@@ -5,8 +5,8 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
-import { Options } from './types/typesAndInterfaces';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import { Options } from './types/typesAndInterfaces';
 
 export function createPlugins(
     {
@@ -46,7 +46,7 @@ export function createPlugins(
                 },
                 mode: 'write-references',
             },
-        })
+        }),
     ];
 
     if (isDev) {

@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Text } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
-import { VStack } from 'shared/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Text } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { RoutePaths } from '@/shared/config/routeConfig/routeConfig';
+import { VStack } from '@/shared/Stack';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentItem.module.scss';
 

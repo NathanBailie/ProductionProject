@@ -1,11 +1,14 @@
 import { type ResolveOptions } from 'webpack';
+import { Options } from './types/typesAndInterfaces';
 
-export function createResolvers(src: string): ResolveOptions {
+export function createResolvers(options: Options): ResolveOptions {
     return {
         extensions: ['.tsx', '.ts', '.js'],
-        modules: [src, 'node_modules'],
+        modules: [options.paths.src, 'node_modules'],
         preferAbsolute: true,
-        alias: {},
         mainFiles: ['index'],
+        alias: {
+            '@': options.paths.src,
+        },
     };
 }

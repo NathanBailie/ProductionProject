@@ -24,7 +24,7 @@ export function webpackConfigBuild(options: Options): webpack.Configuration {
         module: {
             rules: createLoaders(options),
         },
-        resolve: createResolvers(src),
+        resolve: createResolvers(options),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? createDevServer(options) : undefined,
     };
