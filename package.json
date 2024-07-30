@@ -6,8 +6,10 @@
     "scripts": {
         "build": "webpack",
         "start": "webpack serve --env port=3000",
+        "start:vite": "vite",
         "start:dev:server": "node ./json-server/index.js",
         "start:dev": "concurrently \"npm run start\" \"npm run start:dev:server\"",
+        "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:dev:server\"",
         "build:prod": "webpack --env mode=production apiUtl=https://production-product-server-6a6uxg8uh-nathans-projects-d7e1d9e5.vercel.app",
         "lint:ts": "eslint \"**/*.{ts,tsx}\"",
         "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -61,6 +63,7 @@
         "@types/webpack-dev-server": "^4.7.2",
         "@typescript-eslint/eslint-plugin": "^5.12.1",
         "@typescript-eslint/parser": "^5.12.1",
+        "@vitejs/plugin-react": "^2.1.0",
         "babel-loader": "^8.2.3",
         "babel-plugin-i18next-extract": "^0.8.3",
         "circular-dependency-plugin": "^5.2.2",
@@ -98,6 +101,7 @@
         "ts-morph": "^16.0.0",
         "ts-node": "^10.5.0",
         "typescript": "^4.5.5",
+        "vite": "^3.1.0",
         "webpack": "^5.69.1",
         "webpack-bundle-analyzer": "^4.5.0",
         "webpack-cli": "^4.9.2",
@@ -118,7 +122,8 @@
         "react-dom": "^18.2.0",
         "react-i18next": "^11.18.3",
         "react-redux": "^7.2.6",
-        "react-router-dom": "^6.2.1"
+        "react-router-dom": "^6.2.1",
+        "vite-plugin-svgr": "^2.2.1"
     },
     "loki": {
         "configurations": {
