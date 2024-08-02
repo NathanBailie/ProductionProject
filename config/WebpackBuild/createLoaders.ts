@@ -6,6 +6,7 @@ import { Options } from './types/typesAndInterfaces';
 export function createLoaders(options: Options): RuleSetRule[] {
     const codeBabelLoader = createBabelLoader({ ...options, isTsx: false });
     const tsxBabelLoader = createBabelLoader({ ...options, isTsx: true });
+    const { isDev } = options;
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -22,7 +23,7 @@ export function createLoaders(options: Options): RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
-    const sassLoader = createSassLoader(options);
+    const sassLoader = createSassLoader(isDev);
 
     // const typeScriptLoader = {
     //     test: /\.tsx?$/,

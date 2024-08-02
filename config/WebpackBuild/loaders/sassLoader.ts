@@ -1,7 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { Options } from '../types/typesAndInterfaces';
 
-export function createSassLoader({ isDev }: Options) {
+export function createSassLoader(isDev: boolean) {
     return {
         test: /\.s[ac]ss$/i,
         use: [

@@ -1,3 +1,5 @@
+export { }; // добавлено для обозначения как модуля
+
 module.exports = {
     stories: [
         '../../src/**/*.stories.@(js|jsx|ts|tsx)',
