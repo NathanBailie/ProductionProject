@@ -1,45 +1,16 @@
-import { type RouteProps } from 'react-router-dom';
+import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticlesDetailsPage } from '@/pages/ArticklesDetailsPage';
 import { ArticlesPage } from '@/pages/ArticklesPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { ArticleEditPage } from '@/pages/ArticleEditPage';
-import { AdminPanelPage } from '@/pages/AdminPanelPage';
-import { UserRole } from '@/entities/User';
-import { ForbiddenPage } from '@/pages/ForbiddenPage';
-import { ArticlesDetailsPage } from '@/pages/ArticklesDetailsPage';
+import { AppRoutesProps } from '@/shared/types/router';
+import { AppRoutes, RoutePaths } from '@/shared/const/router';
 
-export type AppRoutesProps = RouteProps & {
-    authOnly?: boolean,
-    roles?: UserRole[]
-}
-
-export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLES_DETAILS = 'article_details',
-    ARTICLES_CREATE = 'article_create',
-    ARTICLES_EDIT = 'article_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN_PAGE = 'forbidden',
-    NOT_FOUND = 'notFound'
-}
-
-export const RoutePaths: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/',
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLES_DETAILS]: '/articles/',
-    [AppRoutes.ARTICLES_CREATE]: '/articles/new',
-    [AppRoutes.ARTICLES_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ADMIN_PANEL]: '/admin',
-    [AppRoutes.FORBIDDEN_PAGE]: '/forbidden',
-    [AppRoutes.NOT_FOUND]: '/*',
-};
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePaths.main,

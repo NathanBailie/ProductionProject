@@ -7,7 +7,7 @@ import EyeIcon from '@/shared/assets/icons/Others/eye-20-20.svg';
 import { Card } from '@/shared/ui/Card/Card';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePaths } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import {
     Article,
