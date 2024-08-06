@@ -9,7 +9,9 @@ export enum AppRoutes {
     ADMIN_PANEL = 'admin_panel',
     FORBIDDEN_PAGE = 'forbidden',
     NOT_FOUND = 'notFound'
-} export const RoutePaths: Record<AppRoutes, string> = {
+}
+
+export const RoutePaths: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
     [AppRoutes.PROFILE]: '/profile/',
@@ -21,4 +23,3 @@ export enum AppRoutes {
     [AppRoutes.FORBIDDEN_PAGE]: '/forbidden',
     [AppRoutes.NOT_FOUND]: '/*',
 };
-

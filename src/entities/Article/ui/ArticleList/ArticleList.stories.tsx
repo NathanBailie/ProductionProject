@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ArticleList } from './ArticleList';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Article/ArticleList',
