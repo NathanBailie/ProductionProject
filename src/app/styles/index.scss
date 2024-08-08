@@ -14,23 +14,24 @@
 .app {
     min-height: 100vh;
     background: var(--bg-color);
+
 }
 
 .content-page {
     display: flex;
 }
 
-*::-webkit-scrollbar {
-    width: 12px;
-    height: 8px;
-}
+// *::-webkit-scrollbar {
+//     width: 12px;
+//     height: 8px;
+// }
 
-*::-webkit-scrollbar-track {
-    background: var(--card-bg);
-}
+// *::-webkit-scrollbar-track {
+//     background: var(--card-bg);
+// }
 
-*::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-primary-color);
-    border-radius: 20px;
-    border: 2px solid var(--primary-color);
-}
+// *::-webkit-scrollbar-thumb {
+//     background-color: var(--inverted-primary-color);
+//     border-radius: 20px;
+//     border: 2px solid var(--primary-color);
+// }
