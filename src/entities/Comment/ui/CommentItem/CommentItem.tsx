@@ -4,9 +4,9 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePaths } from '@/shared/const/router';
 import { VStack } from '@/shared/Stack';
 import { Comment } from '../../model/types/comment';
+import { getRouteProfile } from '@/shared/const/router';
 import cls from './CommentItem.module.scss';
 
 interface CommentItemProps {
@@ -36,7 +36,7 @@ export const CommentItem = memo((props: CommentItemProps) => {
 
     return (
         <VStack max gap="8" className={classNames(cls.CommentItem, {}, [className])}>
-            <AppLink className={cls.header} to={`${RoutePaths.profile}${comment.user.id}`}>
+            <AppLink className={cls.header} to={getRouteProfile(comment.user.id)}>
                 {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
                 <Text className={cls.username} title={comment.user.username} />
             </AppLink>

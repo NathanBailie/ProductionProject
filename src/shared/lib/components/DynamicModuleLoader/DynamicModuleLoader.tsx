@@ -5,7 +5,6 @@ import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/provid
 
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
-    // [name in StateSchemaKey]?: Reducer
 }
 
 interface DynamicModuleLoaderProps {
