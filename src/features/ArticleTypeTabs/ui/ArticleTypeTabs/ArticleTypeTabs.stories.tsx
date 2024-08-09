@@ -15,9 +15,3 @@ export const ArticleTypeTabsLight = Template.bind({});
 ArticleTypeTabsLight.args = {
 
 };
-
-// export const ArticleTypeTabsDark = Template.bind({});
-// ArticleTypeTabsDark.args = {
-
-// };
-// ArticleTypeTabsDark.decorators = [ThemeDecorator(Theme.DARK)];
