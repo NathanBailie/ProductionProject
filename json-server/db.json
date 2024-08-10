@@ -629,7 +629,7 @@
   "profile": [
     {
       "id": "1",
-      "first": "jghwer",
+      "first": "User",
       "lastname": "dfdsfdsffff",
       "age": 465,
       "currency": "RUB",
@@ -678,6 +678,13 @@
       "rate": 5,
       "feedback": "",
       "id": "8zA5ktz"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "",
+      "id": "O_CHt75"
     }
   ],
   "profile-ratings": [
