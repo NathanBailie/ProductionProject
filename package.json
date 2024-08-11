@@ -146,6 +146,7 @@
         }
     },
     "lint-staged": {
-        "**/*.{ts,tsx}": "eslint --fix"
+        "**/*.{ts,tsx}": "eslint --fix",
+        "**/*.scss": "npx stylelint --fix"
     }
 }
