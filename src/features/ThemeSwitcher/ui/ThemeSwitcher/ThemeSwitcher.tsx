@@ -7,7 +7,7 @@ import { Theme } from '@/shared/const/theme';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface ThemeSwitcherProps {
-    className?: string
+    className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
@@ -16,11 +16,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     return (
         <Button
             theme={ButtonTheme.CLEAR}
-            className={classNames(
-                '',
-                {},
-                [className],
-            )}
+            className={classNames('', {}, [className])}
             onClick={themeToggler}
         >
             {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}

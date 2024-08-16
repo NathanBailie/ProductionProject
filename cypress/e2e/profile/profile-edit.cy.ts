@@ -22,7 +22,10 @@ describe('User is visiting the profile page', () => {
         const newAge = '25';
         cy.updateProfile(newName, newLastname, newAge);
         cy.getByTestId('ProfileCard.firstname').should('have.value', newName);
-        cy.getByTestId('ProfileCard.lastname').should('have.value', newLastname);
+        cy.getByTestId('ProfileCard.lastname').should(
+            'have.value',
+            newLastname,
+        );
         cy.getByTestId('ProfileCard.age').should('have.value', newAge);
     });
 });

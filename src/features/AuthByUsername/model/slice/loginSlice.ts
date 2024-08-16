@@ -3,7 +3,7 @@ import { LoginSchema } from '../types/loginSchema';
 import { loginByUsername } from '../services/loginByUsername/loginByUsername';
 
 export interface CounterState {
-    value: number
+    value: number;
 }
 
 const initialState: LoginSchema = {

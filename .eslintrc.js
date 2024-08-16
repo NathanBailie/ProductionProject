@@ -6,9 +6,11 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
-        'airbnb', 'plugin:i18next/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
         'plugin:storybook/recommended',
         'plugin:react-hooks/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -27,9 +29,6 @@ module.exports = {
         'unused-imports',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
         'react/jsx-filename-extension':
             [2,
                 {
@@ -62,6 +61,8 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+        'unused-imports/no-unused-imports': 'error',
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
         'ulbi-tv-plugin/layer-imports': [
             'error',
             {
@@ -76,7 +77,6 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
-        'unused-imports/no-unused-imports': 'error',
     },
     globals: {
         __IS_DEV__: true,

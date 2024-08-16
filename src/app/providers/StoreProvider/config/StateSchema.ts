@@ -18,41 +18,44 @@ import { articlesPageSchema } from '@/pages/ArticklesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
-    counter: CounterSchema,
-    user: UserSchema,
-    scrollRecovery: ScrollRecoverySchema,
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    counter: CounterSchema;
+    user: UserSchema;
+    scrollRecovery: ScrollRecoverySchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // async reducers
-    loginForm?: LoginSchema,
-    profile?: ProfileSchema,
-    articleDetails?: ArticleDetailsSchema,
-    addCommentForm?: AddCommentFormSchema,
-    articlesPage?: articlesPageSchema,
-    articleDetailsPage?: ArticleDetailsPageSchema
+    loginForm?: LoginSchema;
+    profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
+    addCommentForm?: AddCommentFormSchema;
+    articlesPage?: articlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
 export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
-    getReducerMap: () => ReducersMapObject<StateSchema>,
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>,
-    add: (key: StateSchemaKey, reducer: Reducer) => void,
-    remove: (key: StateSchemaKey) => void,
-    getMountedReducers: () => MountedReducers,
+    getReducerMap: () => ReducersMapObject<StateSchema>;
+    reduce: (
+        state: StateSchema,
+        action: AnyAction,
+    ) => CombinedState<StateSchema>;
+    add: (key: StateSchemaKey, reducer: Reducer) => void;
+    remove: (key: StateSchemaKey) => void;
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: ReducerManager,
+    reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
-    api: AxiosInstance,
+    api: AxiosInstance;
 }
 
 export interface ThunkConfig<T> {
-    rejectValue: T,
-    extra: ThunkExtraArg,
-    state: StateSchema,
+    rejectValue: T;
+    extra: ThunkExtraArg;
+    state: StateSchema;
 }

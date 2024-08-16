@@ -16,6 +16,8 @@ export const ErrorButton = () => {
     }, [error]);
 
     return (
-        <button type="button" onClick={throwError}>{t('Throw error')}</button>
+        <button type="button" onClick={throwError}>
+            {t('Throw error')}
+        </button>
     );
 };

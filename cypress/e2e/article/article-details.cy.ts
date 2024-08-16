@@ -28,7 +28,9 @@ describe('The user is visiting the article page', () => {
         cy.getByTestId('CommentItem.Content').should('have.length', 1);
     });
     it('And makes a grade (with fixture)', () => {
-        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+        cy.intercept('GET', '**/articles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('Rating').scrollIntoView();
         cy.setRate(5, 'feedback');

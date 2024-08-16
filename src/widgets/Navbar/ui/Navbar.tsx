@@ -14,7 +14,7 @@ import { getRouteArticleCreate } from '@/shared/const/router';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -45,7 +45,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('Create a new article')}
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
-
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
@@ -62,7 +61,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             >
                 {t('Log in')}
             </Button>
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     );
 });

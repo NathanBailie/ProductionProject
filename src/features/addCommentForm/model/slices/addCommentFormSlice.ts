@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { AddCommentFormSchema } from '../types/addCommentForm';
 
 export interface CounterState {
-    value: number
+    value: number;
 }
 
 const initialState: AddCommentFormSchema = {

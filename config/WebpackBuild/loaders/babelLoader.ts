@@ -2,7 +2,7 @@ import { Options } from '../types/typesAndInterfaces';
 import babelRemovePropsPlugin from '../babel/babelRemovePropsPlugin';
 
 interface BuildBabelLoaderProps extends Options {
-    isTsx?: boolean
+    isTsx?: boolean;
 }
 
 export function createBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
@@ -23,12 +23,13 @@ export function createBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
                         },
                     ],
                     '@babel/plugin-transform-runtime',
-                    isTsx && isProd && [
-                        babelRemovePropsPlugin,
-                        {
-                            props: ['data-testid'],
-                        },
-                    ],
+                    isTsx &&
+                        isProd && [
+                            babelRemovePropsPlugin,
+                            {
+                                props: ['data-testid'],
+                            },
+                        ],
                     isDev && require.resolve('react-refresh/babel'),
                 ].filter(Boolean),
             },

@@ -7,29 +7,32 @@ import { Icon } from '../Icon';
 import cls from './Avatar.module.scss';
 
 interface AvatarProps {
-    className?: string
-    src?: string
-    alt?: string
-    size?: number
-    fallbackInverted?: boolean
+    className?: string;
+    src?: string;
+    alt?: string;
+    size?: number;
+    fallbackInverted?: boolean;
 }
 
 export const Avatar = (props: AvatarProps) => {
-    const {
-        className,
-        src,
-        alt,
-        size = 100,
-        fallbackInverted,
-    } = props;
-    const styles = useMemo<CSSProperties>(() => ({
-        width: size,
-        height: size,
-
-    }), [size]);
+    const { className, src, alt, size = 100, fallbackInverted } = props;
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            width: size,
+            height: size,
+        }),
+        [size],
+    );
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
-    const errorFallback = <Icon inverted={fallbackInverted} Svg={UserIcon} width={size} height={size} />;
+    const errorFallback = (
+        <Icon
+            inverted={fallbackInverted}
+            Svg={UserIcon}
+            width={size}
+            height={size}
+        />
+    );
 
     return (
         <AppImage

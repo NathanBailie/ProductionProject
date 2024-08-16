@@ -15,9 +15,15 @@ export const Counter = () => {
     return (
         <div>
             <h1 data-testid="value-title">{`value = ${CounterValue}`}</h1>
-            <Button data-testid="increment-btn" onClick={handleInc}>{t('Increment')}</Button>
-            <Button data-testid="decrement-btn" onClick={handleDec}>{t('Decrement')}</Button>
-            <Button data-testid="increment-btn6" onClick={handleIncSix}>{t('Add 6')}</Button>
+            <Button data-testid="increment-btn" onClick={handleInc}>
+                {t('Increment')}
+            </Button>
+            <Button data-testid="decrement-btn" onClick={handleDec}>
+                {t('Decrement')}
+            </Button>
+            <Button data-testid="increment-btn6" onClick={handleIncSix}>
+                {t('Add 6')}
+            </Button>
         </div>
     );
 };

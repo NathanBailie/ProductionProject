@@ -14,7 +14,9 @@ export default {
     },
 } as ComponentMeta<typeof ProfileCard>;
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
+const Template: ComponentStory<typeof ProfileCard> = (args) => (
+    <ProfileCard {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -43,9 +45,7 @@ PrimaryDark.args = {
         avatar,
     },
 };
-PrimaryDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-];
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithError = Template.bind({});
 WithError.args = {
@@ -56,9 +56,7 @@ export const WithErrorDark = Template.bind({});
 WithErrorDark.args = {
     error: 'error',
 };
-WithErrorDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-];
+WithErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithLoading = Template.bind({});
 WithLoading.args = {
@@ -69,6 +67,4 @@ export const WithLoadingDark = Template.bind({});
 WithLoadingDark.args = {
     loading: true,
 };
-WithLoadingDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-];
+WithLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];

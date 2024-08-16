@@ -9,9 +9,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleTypeTabs>;
 
-const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
+const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => (
+    <ArticleTypeTabs {...args} />
+);
 
 export const ArticleTypeTabsLight = Template.bind({});
-ArticleTypeTabsLight.args = {
-
-};
+ArticleTypeTabsLight.args = {};

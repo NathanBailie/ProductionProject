@@ -20,9 +20,7 @@ const article: Article = {
             id: '1',
             type: ArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
-            paragraphs: [
-                'paragraph',
-            ],
+            paragraphs: ['paragraph'],
         },
         {
             id: '4',
@@ -33,9 +31,7 @@ const article: Article = {
             id: '5',
             type: ArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
-            paragraphs: [
-                'paragraph',
-            ],
+            paragraphs: ['paragraph'],
         },
     ],
 };

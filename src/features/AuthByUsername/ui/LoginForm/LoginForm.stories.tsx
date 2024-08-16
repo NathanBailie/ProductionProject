@@ -12,36 +12,44 @@ export default {
     },
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: ComponentStory<typeof LoginForm> = (args) => (
+    <LoginForm {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};
-Light.decorators = [StoreDecorator({
-    loginForm: {
-        username: 'username',
-        password: 'password',
-    },
-})];
+Light.decorators = [
+    StoreDecorator({
+        loginForm: {
+            username: 'username',
+            password: 'password',
+        },
+    }),
+];
 
 export const LightIsLoading = Template.bind({});
 LightIsLoading.args = {};
-LightIsLoading.decorators = [StoreDecorator({
-    loginForm: {
-        username: 'username',
-        password: 'password',
-        isLoading: true,
-    },
-})];
+LightIsLoading.decorators = [
+    StoreDecorator({
+        loginForm: {
+            username: 'username',
+            password: 'password',
+            isLoading: true,
+        },
+    }),
+];
 
 export const LightWithError = Template.bind({});
 LightWithError.args = {};
-LightWithError.decorators = [StoreDecorator({
-    loginForm: {
-        username: 'username',
-        password: 'password',
-        error: 'error',
-    },
-})];
+LightWithError.decorators = [
+    StoreDecorator({
+        loginForm: {
+            username: 'username',
+            password: 'password',
+            error: 'error',
+        },
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
@@ -52,7 +60,8 @@ Dark.decorators = [
             username: 'username',
             password: 'password',
         },
-    })];
+    }),
+];
 
 export const DarkIsLoading = Template.bind({});
 DarkIsLoading.args = {};
@@ -64,7 +73,8 @@ DarkIsLoading.decorators = [
             password: 'password',
             isLoading: true,
         },
-    })];
+    }),
+];
 
 export const DarkWithError = Template.bind({});
 DarkWithError.args = {};
@@ -76,4 +86,5 @@ DarkWithError.decorators = [
             password: 'password',
             error: 'error',
         },
-    })];
+    }),
+];

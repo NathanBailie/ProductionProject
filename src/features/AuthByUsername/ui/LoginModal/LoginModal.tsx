@@ -5,9 +5,9 @@ import { Spinner } from '@/shared/ui/Spinner';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 interface LoginModalProps {
-    className?: string,
-    isOpen: boolean,
-    onClose: () => void,
+    className?: string;
+    isOpen: boolean;
+    onClose: () => void;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
@@ -15,11 +15,7 @@ export const LoginModal = (props: LoginModalProps) => {
 
     return (
         <Modal
-            className={classNames(
-                '',
-                {},
-                [className],
-            )}
+            className={classNames('', {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
             lazy

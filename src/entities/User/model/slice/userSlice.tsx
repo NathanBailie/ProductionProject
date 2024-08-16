@@ -3,7 +3,7 @@ import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { User, UserSchema } from '../types/user';
 
 export interface CounterState {
-    value: number
+    value: number;
 }
 
 const initialState: UserSchema = {

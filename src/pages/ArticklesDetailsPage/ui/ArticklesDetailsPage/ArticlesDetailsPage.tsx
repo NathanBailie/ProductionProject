@@ -2,7 +2,10 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleRating } from '@/features/articleRating';
@@ -12,7 +15,7 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { articleDetailsPageReducer } from '../../model/slices';
 
 interface ArticlesDetailsPageProps {
-    className?: string,
+    className?: string;
 }
 
 const reducers: ReducersList = {

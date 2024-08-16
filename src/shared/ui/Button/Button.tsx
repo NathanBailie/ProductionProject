@@ -14,15 +14,15 @@ export enum ButtonTheme {
 export enum ButtonSize {
     M = 'm',
     L = 'l',
-    XL = 'xl'
+    XL = 'xl',
 }
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string,
-    theme?: ButtonTheme,
-    square?: boolean,
-    size?: string,
-    disabled?: boolean,
-    children?: ReactNode,
+    className?: string;
+    theme?: ButtonTheme;
+    square?: boolean;
+    size?: string;
+    disabled?: boolean;
+    children?: ReactNode;
     fullWidth?: boolean;
 }
 
@@ -47,11 +47,11 @@ export const Button = memo((props: ButtonProps) => {
     return (
         <button
             type="button"
-            className={classNames(
-                cls.Button,
-                mods,
-                [className, cls[theme], cls[size]],
-            )}
+            className={classNames(cls.Button, mods, [
+                className,
+                cls[theme],
+                cls[size],
+            ])}
             disabled={disabled}
             {...otherProps}
         >

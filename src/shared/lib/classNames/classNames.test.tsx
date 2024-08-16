@@ -8,60 +8,48 @@ describe('Tests for classNames', () => {
 
     test('With mods', () => {
         const result = 'oneClass active hovered';
-        expect(classNames(
-            'oneClass',
-            { active: true, hovered: true },
-        )).toBe(result);
+        expect(classNames('oneClass', { active: true, hovered: true })).toBe(
+            result,
+        );
     });
 
     test('With false mods', () => {
         const result = 'oneClass linked';
-        expect(classNames(
-            'oneClass',
-            {
+        expect(
+            classNames('oneClass', {
                 hovered: false,
                 linked: true,
-            },
-        )).toBe(result);
+            }),
+        ).toBe(result);
     });
 
     test('With undefined mods', () => {
         const result = 'oneClass active';
-        expect(classNames(
-            'oneClass',
-            {
+        expect(
+            classNames('oneClass', {
                 active: true,
                 linked: undefined,
-            },
-        )).toBe(result);
+            }),
+        ).toBe(result);
     });
 
     test('With additional classes', () => {
         const result = 'oneClass active';
-        expect(classNames(
-            'oneClass',
-            {},
-            [
-                'active',
-            ],
-        )).toBe(result);
+        expect(classNames('oneClass', {}, ['active'])).toBe(result);
     });
 
-    test(
-        'With all kind of classes and modes',
-        () => {
-            const result = 'oneClass active colored';
-            expect(classNames(
+    test('With all kind of classes and modes', () => {
+        const result = 'oneClass active colored';
+        expect(
+            classNames(
                 'oneClass',
                 {
                     active: true,
                     hovered: false,
                     linked: undefined,
                 },
-                [
-                    'colored',
-                ],
-            )).toBe(result);
-        },
-    );
+                ['colored'],
+            ),
+        ).toBe(result);
+    });
 });

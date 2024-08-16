@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+    <ArticleDetails {...args} />
+);
 
 const article: Article = {
     id: '1',
@@ -31,9 +33,7 @@ const article: Article = {
             id: '1',
             type: ArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
-            paragraphs: [
-                'paragraph',
-            ],
+            paragraphs: ['paragraph'],
         },
         {
             id: '4',
@@ -44,9 +44,7 @@ const article: Article = {
             id: '5',
             type: ArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
-            paragraphs: [
-                'paragraph',
-            ],
+            paragraphs: ['paragraph'],
         },
     ],
 };
@@ -58,7 +56,8 @@ Primary.decorators = [
         articleDetails: {
             data: article,
         },
-    })];
+    }),
+];
 
 export const Loading = Template.bind({});
 Loading.args = {};
@@ -67,7 +66,8 @@ Loading.decorators = [
         articleDetails: {
             isLoading: true,
         },
-    })];
+    }),
+];
 
 export const Error = Template.bind({});
 Error.args = {};
@@ -76,4 +76,5 @@ Error.decorators = [
         articleDetails: {
             error: 'error',
         },
-    })];
+    }),
+];

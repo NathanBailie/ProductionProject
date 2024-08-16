@@ -11,19 +11,19 @@ import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
-    className?: string,
-    data?: Profile,
-    loading?: boolean,
-    error?: string,
-    readonly?: boolean,
-    onChangeFirstname?: (value?: string) => void,
-    onChangeLastname?: (value?: string) => void,
-    onChangeAge?: (value?: string) => void,
-    onChangeCurrency?: (currency?: Currency) => void,
-    onChangeCountry?: (country?: Country) => void,
-    onChangeCity?: (value?: string) => void,
-    onChangeUsername?: (value?: string) => void,
-    onChangeAvatar?: (value?: string) => void,
+    className?: string;
+    data?: Profile;
+    loading?: boolean;
+    error?: string;
+    readonly?: boolean;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeLastname?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCurrency?: (currency?: Currency) => void;
+    onChangeCountry?: (country?: Country) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
 }
 
 export const ProfileCard = ({
@@ -51,11 +51,10 @@ export const ProfileCard = ({
             <HStack
                 max
                 justify="center"
-                className={classNames(
-                    cls.ProfileCard,
-                    {},
-                    [className, cls.loading],
-                )}
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
             >
                 <Spinner />
             </HStack>
@@ -66,11 +65,10 @@ export const ProfileCard = ({
         return (
             <HStack
                 justify="center"
-                className={classNames(
-                    cls.ProfileCard,
-                    {},
-                    [className, cls.error],
-                )}
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
             >
                 <Text
                     theme={TextTheme.ERROR}
@@ -86,17 +84,11 @@ export const ProfileCard = ({
         <VStack
             max
             gap="8"
-            className={classNames(
-                cls.ProfileCard,
-                mods,
-                [className],
-            )}
+            className={classNames(cls.ProfileCard, mods, [className])}
         >
             {data?.avatar && (
                 <HStack max justify="center" className={cls.avatarWrapper}>
-                    <Avatar
-                        src={data?.avatar}
-                    />
+                    <Avatar src={data?.avatar} />
                 </HStack>
             )}
 

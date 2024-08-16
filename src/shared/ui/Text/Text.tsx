@@ -5,7 +5,7 @@ import cls from './Text.module.scss';
 export enum TextTheme {
     NORMAL = 'normal',
     INVERTED = 'inverted',
-    ERROR = 'error'
+    ERROR = 'error',
 }
 
 export enum TextAligns {
@@ -21,13 +21,13 @@ export enum TextSize {
 }
 
 interface TextProps {
-    className?: string,
-    title?: string,
-    text?: string,
-    theme?: TextTheme,
-    align?: TextAligns,
-    size?: TextSize,
-    'data-testid'?: string,
+    className?: string;
+    title?: string;
+    text?: string;
+    theme?: TextTheme;
+    align?: TextAligns;
+    size?: TextSize;
+    'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
@@ -52,11 +52,13 @@ export const Text = memo((props: TextProps) => {
     const HeaderTag = mapSizeToHeaerTag[size];
 
     return (
-        <div className={classNames(
-            cls.Text,
-            {},
-            [className, cls[theme], cls[align], cls[size]],
-        )}
+        <div
+            className={classNames(cls.Text, {}, [
+                className,
+                cls[theme],
+                cls[align],
+                cls[size],
+            ])}
         >
             {title && (
                 <HeaderTag
@@ -66,15 +68,11 @@ export const Text = memo((props: TextProps) => {
                     {title}
                 </HeaderTag>
             )}
-            {text
-                && (
-                    <p
-                        className={cls.text}
-                        data-testid={`${dataTestId}.Paragraph`}
-                    >
-                        {text}
-                    </p>
-                )}
+            {text && (
+                <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
+                    {text}
+                </p>
+            )}
         </div>
     );
 });

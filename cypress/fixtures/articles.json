@@ -7,9 +7,7 @@
         "views": 954,
         "createdAt": "06.07.2021",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -26,9 +24,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         }
     },
@@ -40,9 +36,7 @@
         "views": 498,
         "createdAt": "11.04.2021",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -59,9 +53,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         }
     },
@@ -73,9 +65,7 @@
         "views": 799,
         "createdAt": "12.02.2022",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -92,9 +82,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         }
     },
@@ -106,9 +94,7 @@
         "views": 396,
         "createdAt": "15.04.2022",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -125,9 +111,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         }
     }

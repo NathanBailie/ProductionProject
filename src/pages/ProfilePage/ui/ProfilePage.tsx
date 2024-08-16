@@ -5,7 +5,7 @@ import { EditableProfileCard } from '@/features/editableProfileCard';
 import { Page } from '@/widgets/Page';
 
 interface ProfilePageProps {
-    className?: string,
+    className?: string;
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {

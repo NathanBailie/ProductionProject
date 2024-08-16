@@ -3,7 +3,7 @@ import { CounterSchema } from '../types/CounterSchema';
 import { buildSlice } from '@/shared/lib/store';
 
 export interface CounterState {
-    value: number
+    value: number;
 }
 
 const initialState: CounterSchema = {

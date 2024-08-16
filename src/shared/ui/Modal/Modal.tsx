@@ -7,11 +7,11 @@ import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-    className?: string,
-    isOpen?: boolean,
-    onClose?: () => void,
-    children?: ReactNode,
-    lazy?: boolean
+    className?: string;
+    isOpen?: boolean;
+    onClose?: () => void;
+    children?: ReactNode;
+    lazy?: boolean;
 }
 
 export const Modal = ({
@@ -40,16 +40,14 @@ export const Modal = ({
 
     return (
         <Portal>
-            <div className={classNames(
-                `${cls.Modal} ${theme}`,
-                mods,
-                [className, 'app_modal'],
-            )}
+            <div
+                className={classNames(`${cls.Modal} ${theme}`, mods, [
+                    className,
+                    'app_modal',
+                ])}
             >
                 <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

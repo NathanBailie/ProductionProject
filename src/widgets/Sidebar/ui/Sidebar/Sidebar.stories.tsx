@@ -12,50 +12,44 @@ export default {
     },
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Sidebar> = (args) => (
+    <Sidebar {...args} />
+);
 
 export const AuthorizedLight = Template.bind({});
 AuthorizedLight.args = {};
 AuthorizedLight.decorators = [
-    StoreDecorator(
-        {
-            user: {
-                authData: {},
-            },
+    StoreDecorator({
+        user: {
+            authData: {},
         },
-    ),
+    }),
 ];
 
 export const AuthorizedDark = Template.bind({});
 AuthorizedDark.args = {};
 AuthorizedDark.decorators = [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator(
-        {
-            user: {
-                authData: {},
-            },
+    StoreDecorator({
+        user: {
+            authData: {},
         },
-    ),
+    }),
 ];
 
 export const UnauthorizedLight = Template.bind({});
 UnauthorizedLight.args = {};
 UnauthorizedLight.decorators = [
-    StoreDecorator(
-        {
-            user: {},
-        },
-    ),
+    StoreDecorator({
+        user: {},
+    }),
 ];
 
 export const UnauthorizedDark = Template.bind({});
 UnauthorizedDark.args = {};
 UnauthorizedDark.decorators = [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator(
-        {
-            user: {},
-        },
-    ),
+    StoreDecorator({
+        user: {},
+    }),
 ];

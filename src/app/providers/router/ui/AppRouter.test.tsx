@@ -1,7 +1,11 @@
 import { screen } from '@testing-library/react';
 import AppRouter from './AppRouter';
 import { UserRole } from '@/entities/User';
-import { getRouteAbout, getRouteProfile, getRouteAdmin } from '@/shared/const/router';
+import {
+    getRouteAbout,
+    getRouteProfile,
+    getRouteAdmin,
+} from '@/shared/const/router';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 describe('app/router/AppRouter', () => {
@@ -60,7 +64,10 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
-                user: { _initialized: true, authData: { roles: [UserRole.ADMIN] } },
+                user: {
+                    _initialized: true,
+                    authData: { roles: [UserRole.ADMIN] },
+                },
             },
         });
 

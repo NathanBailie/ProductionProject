@@ -51,9 +51,14 @@ describe('loginByUsername.test', () => {
 
         const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ data: userData }));
-        const result = await thunk.callThunk({ username: 'username', password: 'password' });
+        const result = await thunk.callThunk({
+            username: 'username',
+            password: 'password',
+        });
 
-        expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userData));
+        expect(thunk.dispatch).toHaveBeenCalledWith(
+            userActions.setAuthData(userData),
+        );
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(thunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -63,7 +68,10 @@ describe('loginByUsername.test', () => {
     test('Unsuccessful authorization', async () => {
         const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk({ username: 'username', password: 'password' });
+        const result = await thunk.callThunk({
+            username: 'username',
+            password: 'password',
+        });
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(thunk.api.post).toHaveBeenCalled();
