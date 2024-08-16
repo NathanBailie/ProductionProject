@@ -122,6 +122,7 @@ export const ProfileCard = ({
                 className={cls.input}
                 onChange={onChangeAge}
                 readonly={readonly}
+                data-testid="ProfileCard.age"
             />
             <Input
                 value={data?.city}

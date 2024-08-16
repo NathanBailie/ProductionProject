@@ -6,6 +6,10 @@ describe('Routing', () => {
             cy.visit('/');
             cy.get(selectByTestId('MainPage')).should('exist');
         });
+        it('Navigate to the about page', () => {
+            cy.visit('/about');
+            cy.get(selectByTestId('AboutPage')).should('exist');
+        });
         it('Navigate to the profile page', () => {
             cy.visit('/profile/1');
             cy.get(selectByTestId('MainPage')).should('exist');

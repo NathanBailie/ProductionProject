@@ -14,12 +14,15 @@ describe('User is visiting the profile page', () => {
 
     it('And the profile uploads successfully', () => {
         cy.getByTestId('ProfileCard.firstname').should('have.value', 'test');
+        cy.getByTestId('ProfileCard.lastname').should('have.value', 'user');
     });
     it('And he edits it', () => {
         const newName = 'new name';
         const newLastname = 'new lastname';
-        cy.updateProfile(newName, newLastname);
+        const newAge = '25';
+        cy.updateProfile(newName, newLastname, newAge);
         cy.getByTestId('ProfileCard.firstname').should('have.value', newName);
         cy.getByTestId('ProfileCard.lastname').should('have.value', newLastname);
+        cy.getByTestId('ProfileCard.age').should('have.value', newAge);
     });
 });
