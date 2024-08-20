@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -13,8 +14,8 @@ import { Page } from '@/widgets/Page';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { articleDetailsPageReducer } from '../../model/slices';
-import { getFeatureFlag } from '@/shared/lib/features';
-import { Counter } from '@/entities/Counter';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticlesDetailsPageProps {
     className?: string;
@@ -25,13 +26,18 @@ const reducers: ReducersList = {
 };
 
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
+    const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-    const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
     if (!id) {
         return null;
     }
+
+    const articleRatingCard = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Card>{t('Article evaluation coming soon!')}</Card>,
+    });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -39,8 +45,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {isCounterEnabled && <Counter />}
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+                    {articleRatingCard}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

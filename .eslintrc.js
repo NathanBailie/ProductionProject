@@ -63,6 +63,7 @@ module.exports = {
         'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
         'unused-imports/no-unused-imports': 'error',
         'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        'react/no-unstable-nested-components': 'warn',
         'ulbi-tv-plugin/layer-imports': [
             'error',
             {
