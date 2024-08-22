@@ -1,20 +1,26 @@
 import { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Sidebar } from '@/widgets/Sidebar';
-import { Navbar } from '@/widgets/Navbar';
-import { getUserInitialized, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { PageLoader } from '@/widgets/PageLoader';
+import { getUserInitialized, initAuthData } from '@/entities/User';
 
-const App = () => {
+function App() {
     const { theme } = useTheme();
-    const dispatch = useDispatch();
-    const initialized = useSelector(getUserInitialized);
+    const dispatch = useAppDispatch();
+    const inited = useSelector(getUserInitialized);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!inited) {
+        return <PageLoader />;
+    }
 
     return (
         <div className={classNames('app', {}, [theme])}>
@@ -22,11 +28,11 @@ const App = () => {
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    {initialized && <AppRouter />}
+                    {inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>
     );
-};
+}
 
 export default App;
