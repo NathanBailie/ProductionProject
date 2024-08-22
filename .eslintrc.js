@@ -29,11 +29,12 @@ module.exports = {
         'unused-imports',
     ],
     rules: {
-        'react/jsx-filename-extension':
-            [2,
-                {
-                    extensions: ['.js', '.jsx', '.tsx'],
-                }],
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
+        ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'off',
@@ -49,8 +50,21 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['role', 'data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'border'],
-            }],
+                ignoreAttribute: [
+                    'role',
+                    'data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'align',
+                    'direction',
+                    'gap',
+                    'as',
+                    'border',
+                    'feature',
+                ],
+            },
+        ],
         'max-len': ['error', { code: 130, ignoreComments: true }],
         'linebreak-style': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -75,7 +89,11 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
     },
