@@ -18,7 +18,7 @@
     margin-left: 20px;
 }
 
-.CollapseButton {
+.collapseBtn {
     position: absolute;
     right: -32px;
     bottom: 32px;
@@ -41,4 +41,15 @@
     .lang {
         margin-left: 0;
     }
+}
+
+.SidebarRedesigned {
+    background: var(--light-bg-redesigned);
+    width: 220px;
+    height: 100%;
+    border-radius: 32px;
+}
+
+.appLogo {
+    padding-top: 20px;
 }
