@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { useCounterValue } from '../model/selectors/GetCounterValue/getCounterValue';
 import { useCounterActions } from '../model/slice/counterSlice';
 

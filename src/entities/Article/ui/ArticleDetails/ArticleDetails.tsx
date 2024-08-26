@@ -12,8 +12,8 @@ import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
-import { Icon } from '@/shared/ui/deprecated/Icon';
-import { HStack, VStack } from '@/shared/Stack';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
