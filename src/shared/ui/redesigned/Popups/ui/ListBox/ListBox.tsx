@@ -3,10 +3,10 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '../../../../redesigned/Stack';
 import { DropdownDirection } from '@/shared/types/ui';
-import cls from './ListBox.module.scss';
 import { Button } from '../../../../redesigned/Button';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
+import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -25,11 +25,6 @@ interface ListBoxProps {
     label?: string;
 }
 
-/**
- * Deprecated, use the new component from the redesigned folder
- * @deprecated
- */
-
 export function ListBox(props: ListBoxProps) {
     const {
         className,
@@ -42,7 +37,7 @@ export function ListBox(props: ListBoxProps) {
         label,
     } = props;
 
-    const optionsClasses = [mapDirectionClass[direction]];
+    const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
 
     return (
         <HStack gap="4">
@@ -57,10 +52,7 @@ export function ListBox(props: ListBoxProps) {
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button
-                    // disabled={readonly}
-                    className={cls.trigger}
-                >
+                <HListBox.Button className={cls.trigger}>
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListBox.Button>
                 <HListBox.Options
