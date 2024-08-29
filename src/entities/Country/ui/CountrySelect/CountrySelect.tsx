@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Country } from '../../model/types/Country';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CountrySelectProps {
     className?: string;
@@ -20,27 +21,34 @@ const options = [
     { value: Country.ARMENIA, content: Country.ARMENIA },
 ];
 
-export const CountrySelect = memo((props: CountrySelectProps) => {
-    const { t } = useTranslation('profile');
-    const { className, value, onChange, readonly } = props;
+export const CountrySelect = memo(
+    ({ className, value, onChange, readonly }: CountrySelectProps) => {
+        const { t } = useTranslation('profile');
 
-    const onChangeHandler = useCallback(
-        (value: string) => {
-            onChange?.(value as Country);
-        },
-        [onChange],
-    );
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Country);
+            },
+            [onChange],
+        );
 
-    return (
-        <ListBox
-            className={classNames('', {}, [className])}
-            label={t('Country')}
-            items={options}
-            value={value}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            defaultValue={t('Country')}
-            direction="top right"
-        />
-    );
-});
+        const props = {
+            className,
+            label: t('Country'),
+            items: options,
+            value,
+            onChange: onChangeHandler,
+            readonly,
+            defaultValue: t('Country'),
+            direction: 'top right' as const,
+        };
+
+        return (
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<ListBox {...props} />}
+                off={<ListBoxDeprecated {...props} />}
+            />
+        );
+    },
+);

@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Currency } from '../../model/types/Currency';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CurrencySelectProps {
     className?: string;
@@ -17,27 +18,33 @@ const options = [
     { value: Currency.USD, content: Currency.USD },
 ];
 
-export const CurrencySelect = memo((props: CurrencySelectProps) => {
-    const { t } = useTranslation('profile');
-    const { className, value, onChange, readonly } = props;
+export const CurrencySelect = memo(
+    ({ className, value, onChange, readonly }: CurrencySelectProps) => {
+        const { t } = useTranslation('profile');
 
-    const onChangeHandler = useCallback(
-        (value: string) => {
-            onChange?.(value as Currency);
-        },
-        [onChange],
-    );
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Currency);
+            },
+            [onChange],
+        );
+        const props = {
+            onChange: onChangeHandler,
+            value,
+            items: options,
+            defaultValue: t('Currency'),
+            label: t('Currency'),
+            className,
+            readonly,
+            direction: 'top right' as const,
+        };
 
-    return (
-        <ListBox
-            onChange={onChangeHandler}
-            value={value}
-            items={options}
-            defaultValue={t('Currency')}
-            label={t('Currency')}
-            className={classNames('', {}, [className])}
-            readonly={readonly}
-            direction="top right"
-        />
-    );
-});
+        return (
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<ListBox {...props} />}
+                off={<ListBoxDeprecated {...props} />}
+            />
+        );
+    },
+);
