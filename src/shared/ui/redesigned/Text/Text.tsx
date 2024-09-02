@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export type TextVariant = 'primary' | 'error' | 'accent';
@@ -13,6 +13,7 @@ interface TextProps {
     variant?: TextVariant;
     align?: TextAlign;
     size?: TextSize;
+    bold?: boolean;
     'data-testid'?: string;
 }
 
@@ -38,15 +39,19 @@ export const Text = memo((props: TextProps) => {
         variant = 'primary',
         align = 'left',
         size = 'm',
+        bold,
         'data-testid': dataTestId = 'Text',
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
     const sizeClass = mapSizeToClass[size];
     const additionalClasses = [className, cls[variant], cls[align], sizeClass];
+    const mods: Mods = {
+        [cls.bold]: bold,
+    };
 
     return (
-        <div className={classNames(cls.Text, {}, additionalClasses)}>
+        <div className={classNames(cls.Text, mods, additionalClasses)}>
             {title && (
                 <HeaderTag
                     className={cls.title}
