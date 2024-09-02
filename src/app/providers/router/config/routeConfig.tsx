@@ -21,7 +21,9 @@ import {
     getRouteMain,
     getRouteNotFound,
     getRouteProfile,
+    getRouteSettings,
 } from '@/shared/const/router';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
@@ -31,6 +33,10 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ABOUT]: {
         path: getRouteAbout(),
         element: <AboutPage />,
+    },
+    [AppRoutes.SETTINGS]: {
+        path: getRouteSettings(),
+        element: <SettingsPage />,
     },
     [AppRoutes.PROFILE]: {
         path: getRouteProfile(':id'),
