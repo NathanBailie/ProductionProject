@@ -6,5 +6,10 @@
     "Redaction": "Редактирование",
     "Article evaluation coming soon!": "Оценка статьи скоро появится!",
     "Welcome to the articles page": "Добро пожаловать на страницу статей",
-    "Here you can search and browse articles on a variety of themes": "Здесь вы можете искать и просматривать статьи на разные темы"
+    "Here you can search and browse articles on a variety of themes": "Здесь вы можете искать и просматривать статьи на разные темы",
+    "Edit": "Редактировать",
+    "{{count}} views_zero": "{{count}} просмотров",
+    "{{count}} views_one": "{{count}} просмотр",
+    "{{count}} views_few": "{{count}} просмотра",
+    "{{count}} views_many": "{{count}} просмотров"
 }

@@ -30,6 +30,7 @@ export const Card = memo((props: CardProps) => {
         max,
         padding = '8',
         border = 'normal',
+
         ...otherProps
     } = props;
 

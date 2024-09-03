@@ -6,5 +6,9 @@
     "Redaction": "Redaction",
     "Article evaluation coming soon!": "Article evaluation coming soon!",
     "Welcome to the articles page": "Welcome to the articles page",
-    "Here you can search and browse articles on a variety of themes": "Here you can search and browse articles on a variety of themes"
+    "Here you can search and browse articles on a variety of themes": "Here you can search and browse articles on a variety of themes",
+    "Edit": "Edit",
+    "{{count}} views_zero": "{{count}} views",
+    "{{count}} views_one": "{{count}} view",
+    "{{count}} views_other": "{{count}} views"
 }
