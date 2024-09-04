@@ -22,17 +22,34 @@
     display: flex;
 }
 
-// *::-webkit-scrollbar {
-//     width: 12px;
-//     height: 8px;
-// }
+*::-webkit-scrollbar {
+    width: 12px;
 
-// *::-webkit-scrollbar-track {
-//     background: var(--card-bg);
-// }
+    /* ширина scrollbar */
+    height: 8px;
+}
 
-// *::-webkit-scrollbar-thumb {
-//     background-color: var(--inverted-primary-color);
-//     border-radius: 20px;
-//     border: 2px solid var(--primary-color);
-// }
+*::-webkit-scrollbar-track {
+    background: var(--light-bg-redesigned); // scrollbar width
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--icon-redesigned); // thumb color
+    border-radius: 20px; // thumb border-radius (rounding)
+    border: 1px solid var(--accent-redesigned); // padding around the thumb
+}
+
+.app *::-webkit-scrollbar {
+    width: 12px; // scrollbar width
+    height: 8px;
+}
+
+.app *::-webkit-scrollbar-track {
+    background: var(--card-bg); // track color
+}
+
+.app *::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color); // thumb color
+    border-radius: 20px; // thumb rounding
+    border: 2px solid var(--primary-color); // padding around the thumb
+}
