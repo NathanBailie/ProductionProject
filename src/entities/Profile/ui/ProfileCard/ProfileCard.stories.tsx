@@ -60,11 +60,11 @@ WithErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithLoading = Template.bind({});
 WithLoading.args = {
-    loading: true,
+    isLoading: true,
 };
 
 export const WithLoadingDark = Template.bind({});
 WithLoadingDark.args = {
-    loading: true,
+    isLoading: true,
 };
 WithLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
