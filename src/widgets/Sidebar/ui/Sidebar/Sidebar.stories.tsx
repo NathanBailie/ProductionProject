@@ -3,6 +3,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Sidebar } from './Sidebar';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'widget/Sidebar',
@@ -10,6 +11,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [NewDesignDecorator],
 } as ComponentMeta<typeof Sidebar>;
 
 const Template: ComponentStory<typeof Sidebar> = (args) => (
@@ -36,6 +38,16 @@ AuthorizedDark.decorators = [
         },
     }),
 ];
+export const AuthorizedOrange = Template.bind({});
+AuthorizedOrange.args = {};
+AuthorizedOrange.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        user: {
+            authData: {},
+        },
+    }),
+];
 
 export const UnauthorizedLight = Template.bind({});
 UnauthorizedLight.args = {};
@@ -49,6 +61,15 @@ export const UnauthorizedDark = Template.bind({});
 UnauthorizedDark.args = {};
 UnauthorizedDark.decorators = [
     ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: {},
+    }),
+];
+
+export const UnauthorizedOrange = Template.bind({});
+UnauthorizedOrange.args = {};
+UnauthorizedOrange.decorators = [
+    ThemeDecorator(Theme.ORANGE),
     StoreDecorator({
         user: {},
     }),

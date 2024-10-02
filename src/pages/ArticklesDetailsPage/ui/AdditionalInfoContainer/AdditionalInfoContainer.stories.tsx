@@ -2,54 +2,36 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticlesDetailsPage from './ArticlesDetailsPage';
-import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { AdditionalInfoContainer } from './AdditionalInfoContainer';
+import { Article } from '@/entities/Article';
 
 export default {
-    title: 'pages/ArticklesDetailsPage/ArticlesDetailsPage',
-    component: ArticlesDetailsPage,
+    title: 'pages/ArticklesDetailsPage/AdditionalInfoContainer',
+    component: AdditionalInfoContainer,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [NewDesignDecorator],
-} as ComponentMeta<typeof ArticlesDetailsPage>;
+    decorators: [StoreDecorator({}), NewDesignDecorator],
+} as ComponentMeta<typeof AdditionalInfoContainer>;
 
-const Template: ComponentStory<typeof ArticlesDetailsPage> = (args) => (
-    <ArticlesDetailsPage {...args} />
+const Template: ComponentStory<typeof AdditionalInfoContainer> = () => (
+    <AdditionalInfoContainer />
 );
 
 const article: Article = {
     id: '1',
-    title: 'Title',
-    subtitle: 'Subtitle',
-    img: '',
-    views: 999,
+    title: 'Javascript news',
+    subtitle: 'Что нового в JS за 2023 год?',
+    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    views: 5,
     createdAt: '16.10.2023',
-    type: [ArticleType.IT],
+    type: [],
     user: {
         id: '1',
         username: 'Nathan',
     },
-    blocks: [
-        {
-            id: '1',
-            type: ArticleBlockType.TEXT,
-            title: 'Title',
-            paragraphs: ['paragraph'],
-        },
-        {
-            id: '4',
-            type: ArticleBlockType.CODE,
-            code: '<p id="hello"></p>',
-        },
-        {
-            id: '5',
-            type: ArticleBlockType.TEXT,
-            title: 'Title',
-            paragraphs: ['paragraph'],
-        },
-    ],
+    blocks: [],
 };
 
 export const Light = Template.bind({});
