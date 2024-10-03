@@ -6,6 +6,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import path from 'path';
 import { Options } from './types/typesAndInterfaces';
 
 export function createPlugins({
@@ -20,6 +21,7 @@ export function createPlugins({
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: paths.html,
+            favicon: path.resolve(paths.public, 'favicon.png'),
         }),
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({

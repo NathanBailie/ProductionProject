@@ -4,6 +4,7 @@ export interface Paths {
     input: string;
     output: string;
     html: string;
+    public: string;
     src: string;
     locales: string;
     buildLocales: string;
