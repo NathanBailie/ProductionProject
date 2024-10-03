@@ -18,7 +18,7 @@ The "Article" entity allows users to browse and select articles for viewing. Its
 
 ##### Types:
 
--   `Article` - еype that describes an article
+-   `Article` - type that describes an article
 
 ##### Selectors:
 
