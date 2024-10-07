@@ -1,3 +1,40 @@
+# Production Product
+
+## Description
+
+This course project is an SPA with articles. Special attention is given to automation and optimization of various processes. It includes lazy loading of content, asynchronous reducers, and more. All dependencies are manually installed, allowing flexible environment management. The project features a custom component library that significantly simplifies layout and interface maintenance. The application state is managed using the Redux state manager. A profile page with editable data is implemented, along with forms, user authentication and authorization, and various types of content sorting. Navigation within the application is handled through routing, making it easy for users to navigate the blog's functionality. The project is developed following the Feature-Sliced Design architectural methodology. It covers many aspects of development, including architecture, user interface, and server interaction.
+
+---
+
+## Screenshots
+
+<img src="https://github.com/NathanBailie/ProductionProject/raw/main/src/shared/assets/screenshots/black.png" width="520" />
+<img src="https://github.com/NathanBailie/ProductionProject/raw/main/src/shared/assets/screenshots/yellow1.png" width="520" />
+<img src="https://github.com/NathanBailie/ProductionProject/raw/main/src/shared/assets/screenshots/light.png" width="520" />
+<img src="https://github.com/NathanBailie/ProductionProject/raw/main/src/shared/assets/screenshots/yellow2.png" width="520" />
+
+---
+
+## Project website
+
+You can watch this project here - [Click](https://frontwebdev.ru/ 'Click to visit the project website')
+
+---
+
+## Login
+
+To login use this data
+
+-   **login**: admin
+-   **password**: 123
+
+or
+
+-   **login**: testuser
+-   **password**: 123
+
+---
+
 ## Project launch
 
 ```
@@ -201,12 +238,18 @@ which takes 2 arguments
 
 -   [addCommentForm](/src/features/addCommentForm)
 -   [articleEditForm](/src/features/articleEditForm)
+-   [articlePageGreeting](/src/features/articlePageGreeting)
 -   [articleRating](/src/features/articleRating)
 -   [articleRecommendationsList](/src/features/articleRecommendationsList)
+-   [ArticleSortSelector](/src/features/ArticleSortSelector)
+-   [ArticleTypeTabs](/src/features/ArticleTypeTabs)
+-   [ArticleViewSelector](/src/features/ArticleViewSelector)
 -   [AuthByUsername](/src/features/AuthByUsername)
 -   [avatarDropdown](/src/features/avatarDropdown)
 -   [editableProfileCard](/src/features/editableProfileCard)
 -   [LangSwitcher](/src/features/LangSwitcher)
 -   [notificationButton](/src/features/notificationButton)
--   [ThemeSwitcher](/src/features/ThemeSwitcher)
 -   [ScrollRecovery](/src/features/ScrollRecovery)
+-   [scrollToTopButton](/src/features/scrollToTopButton)
+-   [ThemeSwitcher](/src/features/ThemeSwitcher)
+-   [uiDesignSwitcher](/src/features/uiDesignSwitcher)
